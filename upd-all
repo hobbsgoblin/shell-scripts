@@ -1,0 +1,18 @@
+#! /bin/bash
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo -e "\n${bold}Updating system packages...${normal}\n"
+sudo dnf update
+wait $!
+
+echo -e "\n${bold}Updating global NPM packages...${normal}\n"
+npm update -g
+wait $!
+
+echo -e "\n${bold}Updating snaps${normal}\n"
+snap refresh
+wait $!
+
+echo -e "\n${bold}Done!${normal}\n"
