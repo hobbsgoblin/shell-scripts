@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# Experimental! Use with caution
+
 bold=$(tput bold)
 normal=$(tput sgr0)
 
